@@ -714,11 +714,12 @@ html, body { height: 100%; font-family: 'Hind Siliguri', sans-serif; background:
   position: relative; width: 100%; height: 200px;
   background: linear-gradient(135deg, #1a1208, #0f0e0c);
   border-radius: 20px 20px 0 0;
-  overflow: hidden;
+  overflow: visible;
 }
 .profile-hero-img {
   width: 100%; height: 100%; object-fit: cover;
   display: block; opacity: 0.85;
+  border-radius: 20px 20px 0 0;
 }
 .profile-hero-overlay {
   position: absolute; inset: 0;
@@ -733,14 +734,15 @@ html, body { height: 100%; font-family: 'Hind Siliguri', sans-serif; background:
 
 /* Avatar circle */
 .profile-avatar-wrap {
-  position: absolute; bottom: -36px; left: 50%;
+  position: absolute; bottom: -114px; left: 50%;
   transform: translateX(-50%);
-  width: 76px; height: 76px;
+  width: 228px; height: 228px;
   border-radius: 50%;
-  border: 3px solid var(--surface);
+  border: 4px solid var(--surface);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 28px rgba(0,0,0,0.7);
   background: var(--surface2);
+  z-index: 999;
 }
 .profile-avatar-wrap img {
   width: 100%; height: 100%; object-fit: cover;
@@ -748,7 +750,7 @@ html, body { height: 100%; font-family: 'Hind Siliguri', sans-serif; background:
 
 /* Body */
 .profile-body {
-  padding: 48px 20px 24px;
+  padding: 128px 20px 24px;
 }
 
 .profile-name {
@@ -1314,7 +1316,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path>
       </svg>
       <input type="text" id="searchInput" placeholder="সদস্য খুঁজুন… (Enter = পরবর্তী)">
-      <span id="searchCount"></span>
+      <span id="searchCount" style="display: inline;">1</span>
     </div>
     <div class="header-actions">
       <button id="theme-btn" onclick="toggleTheme()" title="থিম পরিবর্তন">
@@ -1375,11 +1377,11 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
       </svg>
       <span>সর্বশেষ আপডেট:</span>
-      <span id="sf-last-update" class="" title="সম্পূর্ণ সময়: 2026-02-26 15:42">26 ফেব্রু 2026, 15:42</span>
+      <span id="sf-last-update" class="" title="সম্পূর্ণ সময়: 2026-02-26 18:58">26 ফেব্রু 2026, 18:58</span>
     </div>
     <div class="sf-right">
       <span>মোট সদস্য:</span>
-      <span class="sf-member-count" id="sf-member-count">61</span>
+      <span class="sf-member-count" id="sf-member-count">63</span>
       <span class="sf-version">v20</span>
     </div>
   </footer>
@@ -1387,8 +1389,8 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
 </div>
 
 <!-- ── LEFT MENU DRAWER ── -->
-<div id="lm-overlay" onclick="closeLM()"></div>
-<div id="lm-drawer">
+<div id="lm-overlay" onclick="closeLM()" class=""></div>
+<div id="lm-drawer" class="">
   <div class="lm-header">
     <div class="lm-title">🌿 মেনু</div>
     <button class="lm-close" onclick="closeLM()">✕</button>
@@ -1397,9 +1399,9 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
     <div class="lm-section-header" onclick="toggleEventsPanel()">
       📅 আসন্ন দিনসমূহ
       <span id="events-badge" style="background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.4);color:var(--gold);padding:1px 7px;border-radius:10px;font-size:10px;font-weight:700;margin-left:4px;"></span>
-      <span id="events-toggle-icon" style="margin-left:auto;font-size:10px;color:var(--text-muted);">▼</span>
+      <span id="events-toggle-icon" style="margin-left: auto; font-size: 10px; color: var(--text-muted);">▼</span>
     </div>
-    <div id="events-panel">
+    <div id="events-panel" class="">
       <div id="events-list"></div>
     </div>
   </div>
@@ -1421,7 +1423,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.532 5.853L0 24l6.335-1.502A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.001-1.366l-.358-.213-3.762.892.907-3.668-.234-.376A9.818 9.818 0 1 1 12 21.818z"></path></svg>
         WhatsApp
       </a>
-      <a class="footer-link email" <a href="/cdn-cgi/l/email-protection#5f2c373a3634372c30353a3a3d1f38323e3633713c3032">
+      <a class="footer-link email" <a="" href="/cdn-cgi/l/email-protection#5f2c373a3634372c30353a3a3d1f38323e3633713c3032">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         Email
       </a>
@@ -1521,6 +1523,9 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
     <div class="cp-member-dot" style="background:#b8e85a"></div>
     <span class="cp-member-name">কাওসার</span>
     <span class="cp-member-gen">৬ষ্ঠ প্রজন্ম</span></div><div class="cp-member-row">
+    <div class="cp-member-dot" style="background:#e8c96a"></div>
+    <span class="cp-member-name">জরিপ শেখ</span>
+    <span class="cp-member-gen">মূল পূর্বপুরুষ</span></div><div class="cp-member-row">
     <div class="cp-member-dot" style="background:#97b4f0"></div>
     <span class="cp-member-name">জসমত আলী</span>
     <span class="cp-member-gen">৪র্থ প্রজন্ম</span></div><div class="cp-member-row">
@@ -1530,9 +1535,6 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
     <div class="cp-member-dot" style="background:#5ee8d8"></div>
     <span class="cp-member-name">জামাল শেখ</span>
     <span class="cp-member-gen">৩য় প্রজন্ম</span></div><div class="cp-member-row">
-    <div class="cp-member-dot" style="background:#e8c96a"></div>
-    <span class="cp-member-name">জরিপ শেখ</span>
-    <span class="cp-member-gen">মূল পূর্বপুরুষ</span></div><div class="cp-member-row">
     <div class="cp-member-dot" style="background:#f592c4"></div>
     <span class="cp-member-name">জাহিদ হাসান জিহান</span>
     <span class="cp-member-gen">৫ম প্রজন্ম</span></div><div class="cp-member-row">
@@ -1551,6 +1553,12 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
     <div class="cp-member-dot" style="background:#5ee8d8"></div>
     <span class="cp-member-name">নিজাম উদ্দিন</span>
     <span class="cp-member-gen">৩য় প্রজন্ম</span></div><div class="cp-member-row">
+    <div class="cp-member-dot" style="background:#f592c4"></div>
+    <span class="cp-member-name">নিশাত লুবনা</span>
+    <span class="cp-member-gen">৫ম প্রজন্ম</span></div><div class="cp-member-row">
+    <div class="cp-member-dot" style="background:#f592c4"></div>
+    <span class="cp-member-name">নুসরাত জাহান ইভা</span>
+    <span class="cp-member-gen">৫ম প্রজন্ম</span></div><div class="cp-member-row">
     <div class="cp-member-dot" style="background:#97b4f0"></div>
     <span class="cp-member-name">পশর আলী</span>
     <span class="cp-member-gen">৪র্থ প্রজন্ম</span></div><div class="cp-member-row">
@@ -1652,14 +1660,14 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
       <div class="cp-field">
         <label class="cp-label">প্রোফাইল ছবির লিংক (ঐচ্ছিক)</label>
         <input class="cp-input" id="add-photo" placeholder="https://i.ibb.co/… সরাসরি লিংক" type="url" oninput="prevPhoto(this,'add-photo-preview','add-photo-img')">
-        <div id="add-photo-preview" style="display:none;margin-top:6px;text-align:center">
-          <img id="add-photo-img" src="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-dim)">
+        <div id="add-photo-preview" style="display: none; margin-top: 6px; text-align: center;">
+          <img id="add-photo-img" src="https://i.ibb.co/RkpYCFjC/Whats-App-Image-2025-11-23-at-17-29-16-20464d92.jpg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-dim)">
         </div>
       </div>
       <div class="cp-field">
         <label class="cp-label">জন্ম তারিখ</label>
         <div class="cp-date-row">
-          <input class="cp-input" id="add-dob" placeholder="যেমন: ১৫ জানুয়ারি ১৯৮০" type="text" data-iso="2014-04-04">
+          <input class="cp-input" id="add-dob" placeholder="যেমন: ১৫ জানুয়ারি ১৯৮০" type="text" data-iso="2009-09-25">
           <button class="cp-date-picker-btn" onclick="openDatePicker('add-dob','add-dob-native')" title="ক্যালেন্ডার">📅</button>
           <input type="date" id="add-dob-native" class="cp-date-native" onchange="setDateFromPicker('add-dob','add-dob-native')" style="pointer-events: none;">
         </div>
@@ -1695,7 +1703,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
           <option value="বিধবা/বিপত্নীক">বিধবা/বিপত্নীক</option>
         </select>
       </div>
-      <div id="add-marriage-fields" style="display:none">
+      <div id="add-marriage-fields" style="display: none;">
         <div class="cp-field">
           <label class="cp-label">স্ত্রীর নাম</label>
           <input class="cp-input" id="add-wife" placeholder="যেমন: রহিমা বেগম" type="text">
@@ -1705,7 +1713,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
           <div class="cp-date-row">
             <input class="cp-input" id="add-wdate" placeholder="যেমন: ১৫ জুন ২০০০" type="text">
             <button class="cp-date-picker-btn" onclick="openDatePicker('add-wdate','add-wdate-native')" title="ক্যালেন্ডার">📅</button>
-            <input type="date" id="add-wdate-native" class="cp-date-native" onchange="setDateFromPicker('add-wdate','add-wdate-native')">
+            <input type="date" id="add-wdate-native" class="cp-date-native" onchange="setDateFromPicker('add-wdate','add-wdate-native')" style="pointer-events: none;">
           </div>
         </div>
       </div>
@@ -1722,13 +1730,28 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
     <div class="cp-panel" id="tab-edit">
       <div class="cp-section-title">সদস্য নির্বাচন করুন</div>
       <input class="cp-search" id="edit-search" placeholder="নাম লিখুন…" oninput="filterEditList(this.value)">
-      <div class="cp-member-list" id="edit-member-list"><div class="cp-member-row selected">
+      <div class="cp-member-list" id="edit-member-list"><div class="cp-member-row">
+    <div class="cp-member-dot" style="background:#5ee8d8"></div>
+    <span class="cp-member-name">আব্দুল গনি</span>
+    <span class="cp-member-gen">৩য় প্রজন্ম</span></div><div class="cp-member-row">
     <div class="cp-member-dot" style="background:#f592c4"></div>
-    <span class="cp-member-name">জাহিদ হাসান জিহান</span>
+    <span class="cp-member-name">তোর্সা তাহসিন অর্নি</span>
+    <span class="cp-member-gen">৫ম প্রজন্ম</span></div><div class="cp-member-row">
+    <div class="cp-member-dot" style="background:#5ee8d8"></div>
+    <span class="cp-member-name">নিজাম উদ্দিন</span>
+    <span class="cp-member-gen">৩য় প্রজন্ম</span></div><div class="cp-member-row selected">
+    <div class="cp-member-dot" style="background:#f592c4"></div>
+    <span class="cp-member-name">নিশাত লুবনা</span>
+    <span class="cp-member-gen">৫ম প্রজন্ম</span></div><div class="cp-member-row">
+    <div class="cp-member-dot" style="background:#f592c4"></div>
+    <span class="cp-member-name">মুন্নি আক্তার</span>
+    <span class="cp-member-gen">৫ম প্রজন্ম</span></div><div class="cp-member-row">
+    <div class="cp-member-dot" style="background:#f592c4"></div>
+    <span class="cp-member-name">লুবাবা তাহসিন আনিশা</span>
     <span class="cp-member-gen">৫ম প্রজন্ম</span></div></div>
       <div id="edit-form" style="display: block;">
         <div class="cp-section-title">তথ্য পরিবর্তন করুন</div>
-        <input type="hidden" id="edit-id" value="zahid_hasan_zihan">
+        <input type="hidden" id="edit-id" value="নিশাত_লুবনা">
         <div class="cp-field">
           <label class="cp-label">নাম</label>
           <input class="cp-input" id="edit-name" type="text">
@@ -1744,16 +1767,16 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         <div class="cp-field">
           <label class="cp-label">প্রোফাইল ছবির লিংক (ঐচ্ছিক)</label>
           <input class="cp-input" id="edit-photo" type="url" placeholder="https://i.ibb.co/… সরাসরি লিংক" oninput="prevPhoto(this,'edit-photo-preview','edit-photo-img')">
-          <div id="edit-photo-preview" style="display:none;margin-top:6px;text-align:center">
-            <img id="edit-photo-img" src="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-dim)">
+          <div id="edit-photo-preview" style="display: block; margin-top: 6px; text-align: center;">
+            <img id="edit-photo-img" src="https://i.ibb.co/RkpYCFjC/Whats-App-Image-2025-11-23-at-17-29-16-20464d92.jpg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-dim)">
           </div>
         </div>
         <div class="cp-field">
           <label class="cp-label">জন্ম তারিখ</label>
           <div class="cp-date-row">
-            <input class="cp-input" id="edit-dob" type="text" placeholder="যেমন: ১৫ জানুয়ারি ১৯৮০">
+            <input class="cp-input" id="edit-dob" type="text" placeholder="যেমন: ১৫ জানুয়ারি ১৯৮০" data-iso="2002-02-04">
             <button class="cp-date-picker-btn" onclick="openDatePicker('edit-dob','edit-dob-native')" title="ক্যালেন্ডার">📅</button>
-            <input type="date" id="edit-dob-native" class="cp-date-native" onchange="setDateFromPicker('edit-dob','edit-dob-native')">
+            <input type="date" id="edit-dob-native" class="cp-date-native" onchange="setDateFromPicker('edit-dob','edit-dob-native')" style="pointer-events: none;">
           </div>
         </div>
         <div class="cp-field">
@@ -1787,7 +1810,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
             <option value="বিধবা/বিপত্নীক">বিধবা/বিপত্নীক</option>
           </select>
         </div>
-        <div id="edit-marriage-fields" style="display: none;">
+        <div id="edit-marriage-fields" style="display: block;">
           <div class="cp-field">
             <label class="cp-label">স্ত্রীর নাম</label>
             <input class="cp-input" id="edit-wife" placeholder="যেমন: রহিমা বেগম" type="text">
@@ -1797,7 +1820,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
             <div class="cp-date-row">
               <input class="cp-input" id="edit-wdate" placeholder="যেমন: ১৫ জুন ২০০০" type="text">
               <button class="cp-date-picker-btn" onclick="openDatePicker('edit-wdate','edit-wdate-native')" title="ক্যালেন্ডার">📅</button>
-              <input type="date" id="edit-wdate-native" class="cp-date-native" onchange="setDateFromPicker('edit-wdate','edit-wdate-native')">
+              <input type="date" id="edit-wdate-native" class="cp-date-native" onchange="setDateFromPicker('edit-wdate','edit-wdate-native')" style="pointer-events: none;">
             </div>
           </div>
         </div>
@@ -2019,6 +2042,18 @@ const DATA = {
                 {
                   "id": "abdullah_al_abrar",
                   "name": "আব্দুল্লাহ আল আবরার",
+                  "gen": 4,
+                  "children": []
+                },
+                {
+                  "id": "নিশাত_লুবনা",
+                  "name": "নিশাত লুবনা",
+                  "gen": 4,
+                  "children": []
+                },
+                {
+                  "id": "নুসরাত_জাহান_ইভা",
+                  "name": "নুসরাত জাহান ইভা",
                   "gen": 4,
                   "children": []
                 }
@@ -3515,5 +3550,5 @@ render();
 renderFooter();
 renderEvents();
 </script>
-</body>
-</html>
+
+</body></html>

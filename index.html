@@ -266,7 +266,7 @@ body.light #theme-btn { background: #fff0d0; border-color: #d6a840; color: #7a4f
 html, body { height: 100%; font-family: 'Hind Siliguri', sans-serif; background: var(--bg); color: var(--text); overflow: hidden; }
 
 /* ── APP SHELL ── */
-#app { display: flex; flex-direction: column; height: 100dvh; height: 100vh; }
+#app { display: flex; flex-direction: column; height: 100dvh; height: 100vh; min-height: 0; }
 
 /* ── HEADER ── */
 #header {
@@ -1421,7 +1421,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.532 5.853L0 24l6.335-1.502A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.001-1.366l-.358-.213-3.762.892.907-3.668-.234-.376A9.818 9.818 0 1 1 12 21.818z"></path></svg>
         WhatsApp
       </a>
-      <a class="footer-link email" <a href="mailto:sheikhsojeeb@gmail.com">
+      <a class="footer-link email" <a href="/cdn-cgi/l/email-protection#5f2c373a3634372c30353a3a3d1f38323e3633713c3032">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         Email
       </a>
@@ -1650,6 +1650,13 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         </select>
       </div>
       <div class="cp-field">
+        <label class="cp-label">প্রোফাইল ছবির লিংক (ঐচ্ছিক)</label>
+        <input class="cp-input" id="add-photo" placeholder="https://i.ibb.co/… সরাসরি লিংক" type="url" oninput="prevPhoto(this,'add-photo-preview','add-photo-img')">
+        <div id="add-photo-preview" style="display:none;margin-top:6px;text-align:center">
+          <img id="add-photo-img" src="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-dim)">
+        </div>
+      </div>
+      <div class="cp-field">
         <label class="cp-label">জন্ম তারিখ</label>
         <div class="cp-date-row">
           <input class="cp-input" id="add-dob" placeholder="যেমন: ১৫ জানুয়ারি ১৯৮০" type="text" data-iso="2014-04-04">
@@ -1733,6 +1740,13 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
             <option value="পুরুষ">পুরুষ</option>
             <option value="মহিলা">মহিলা</option>
           </select>
+        </div>
+        <div class="cp-field">
+          <label class="cp-label">প্রোফাইল ছবির লিংক (ঐচ্ছিক)</label>
+          <input class="cp-input" id="edit-photo" type="url" placeholder="https://i.ibb.co/… সরাসরি লিংক" oninput="prevPhoto(this,'edit-photo-preview','edit-photo-img')">
+          <div id="edit-photo-preview" style="display:none;margin-top:6px;text-align:center">
+            <img id="edit-photo-img" src="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-dim)">
+          </div>
         </div>
         <div class="cp-field">
           <label class="cp-label">জন্ম তারিখ</label>
@@ -1822,7 +1836,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ═══════ DATA ═══════
 const DATA = {
   "id": "jarif_sheikh",
@@ -2361,7 +2375,7 @@ function expandToDepth(max) {
 }
 
 // ═══════ PROFILE CARD ═══════
-const DEMO_IMG = 'https://i.ibb.co/Qv2FpSMP/image.png';
+const DEMO_IMG = 'https://i.ibb.co/Qv2FpSMP/image.png'; // legacy fallback
 
 // Extra details (job, address) per person id — extend as needed
 const EXTRA = {
@@ -2467,6 +2481,37 @@ const EXTRA = {
   }
 };
 
+// ═══════ PHOTO & COVER CONSTANTS ═══════
+const DEFAULT_MALE_IMG   = 'https://i.ibb.co/fYX4HB1Z/male.png';
+const DEFAULT_FEMALE_IMG = 'https://i.ibb.co/H68ZWqW/female.png';
+const COVER_IMGS = [
+  'https://i.ibb.co/CpnDRWwp/agile-saikia-v-F7-NFO6-QUZw-unsplash.jpg',
+  'https://i.ibb.co/ddbQM7p/anastasia-meraki-6-Wo9-RFYq-Ghc-unsplash.jpg',
+  'https://i.ibb.co/VY8pzcL3/anjas-a-v-V3g-Tk-Potyr-I-unsplash.jpg',
+  'https://i.ibb.co/Z1g5try0/avi-varma-2xy-Ed-EY5-Af4-unsplash.jpg',
+  'https://i.ibb.co/Q3hxgm0q/fardin-sk-i-RMc-Lp4i-Zvk-unsplash.jpg',
+  'https://i.ibb.co/tMhHNwWx/gatra-pixels-2o-WIb3-Rhh-DM-unsplash.jpg',
+  'https://i.ibb.co/hRHjWdMk/julie-arangio-Hduf-NWe-Fav-U-unsplash.jpg',
+  'https://i.ibb.co/NnkMFqKK/madalina-georgiana-patru-a4e-HWvz7f-Vw-unsplash.jpg',
+  'https://i.ibb.co/LdqxB2YF/mohammad-dadkhah-n2o0uw-XF-3c-unsplash.jpg',
+  'https://i.ibb.co/kgkcyq24/mon-jester-J1-Dj-H2x-RF6-E-unsplash.jpg',
+  'https://i.ibb.co/dskW8whZ/nan-zhou-Bth-Dp9p-Uyak-unsplash.jpg',
+  'https://i.ibb.co/2173vsBX/nhi-dam-JXTs-Uir-TNwc-unsplash.jpg',
+  'https://i.ibb.co/nMBB7c9Q/sajad-baharvandi-lf-GQSM8n6g-A-unsplash.jpg',
+  'https://i.ibb.co/9mvDS2bK/tomas-williams-jw8oo-MDr0p4-unsplash.jpg'
+];
+function getProfilePic(nodeId, gender) {
+  var ex = EXTRA[nodeId] || {};
+  if (ex.photo) return ex.photo;
+  return gender === 'মহিলা' ? DEFAULT_FEMALE_IMG : DEFAULT_MALE_IMG;
+}
+function getCoverImg(nodeId) {
+  var h = 0;
+  for (var i = 0; i < nodeId.length; i++) h = (h * 31 + nodeId.charCodeAt(i)) | 0;
+  return COVER_IMGS[Math.abs(h) % COVER_IMGS.length];
+}
+
+
 function getGenColor(gen) {
   return ['#e8c96a','#f4a56a','#5ee8d8','#97b4f0','#f592c4','#b8e85a'][gen] || '#e8c96a';
 }
@@ -2484,11 +2529,11 @@ function showSheet(id) {
 
     <!-- Hero -->
     <div class="profile-hero gen-hero-${n.gen}">
-      <img class="profile-hero-img" src="${DEMO_IMG}" alt="${n.name}" onerror="this.style.display='none'">
+      <img class="profile-hero-img" src="${getCoverImg(id)}" alt="${n.name}" onerror="this.style.display='none'">
       <div class="profile-hero-overlay"></div>
       <span class="profile-gen-badge gen-badge-${n.gen}">${GEN[n.gen] || ('প্রজন্ম ' + (n.gen + 1))}</span>
       <div class="profile-avatar-wrap">
-        <img src="${DEMO_IMG}" alt="${n.name}" onerror="this.style.opacity='0'">
+        <img src="${getProfilePic(id, extra.gender)}" alt="${n.name}" onerror="this.src='https://i.ibb.co/fYX4HB1Z/male.png'">
       </div>
     </div>
 
@@ -2566,7 +2611,7 @@ function showSheet(id) {
         ${kids.map(c => `
           <div class="child-card" onclick="closeSheet();showSheet('${c.id}')">
             <div class="child-card-avatar">
-              <img src="${DEMO_IMG}" alt="${c.name}" onerror="this.style.opacity='0'">
+              <img src="${getProfilePic(c.id,(EXTRA[c.id]||{}).gender)}" alt="${c.name}" onerror="this.src='https://i.ibb.co/fYX4HB1Z/male.png'">
             </div>
             <div class="child-card-name">${c.name}</div>
           </div>
@@ -2727,6 +2772,7 @@ function addMember() {
   const name    = document.getElementById('add-name').value.trim();
   const pid     = document.getElementById('add-parent-id').value;
   const gender  = document.getElementById('add-gender').value.trim();
+  const photo   = (document.getElementById('add-photo')||{value:''}).value.trim();
   const dob     = document.getElementById('add-dob').value.trim();
   const dod     = document.getElementById('add-dod').value.trim();
   const mother  = document.getElementById('add-mother').value.trim();
@@ -2758,6 +2804,7 @@ function addMember() {
     address: addr || 'গ্রামঃ কাজিয়াকান্দা, থানাঃ হালুয়াঘাট জেলাঃ ময়মনসিংহ',
     lastUpdated: nowStamp(),
     ...(gender  && { gender }),
+    ...(photo   && { photo }),
     ...(dob     && { dob }),
     ...(dod     && { dod }),
     ...(autoMother && { mother: autoMother }),
@@ -2766,9 +2813,10 @@ function addMember() {
     ...(marital === 'বিবাহিত' && wdate && { wdate }),
   };
 
-  ['add-name','add-dob','add-dod','add-mother','add-job','add-notes','add-wife','add-wdate'].forEach(f => {
+  ['add-name','add-dob','add-dod','add-mother','add-job','add-notes','add-wife','add-wdate','add-photo'].forEach(f => {
     const el = document.getElementById(f); if (el) el.value = '';
   });
+  var _ap = document.getElementById('add-photo-preview'); if (_ap) _ap.style.display='none';
   document.getElementById('add-gender').value = '';
   document.getElementById('add-marital').value = '';
   document.getElementById('add-address').value = 'গ্রামঃ কাজিয়াকান্দা, থানাঃ হালুয়াঘাট জেলাঃ ময়মনসিংহ';
@@ -2807,6 +2855,9 @@ function loadEditForm(id) {
   document.getElementById('edit-id').value = id;
   document.getElementById('edit-name').value = n.name;
   document.getElementById('edit-gender').value = ex.gender || '';
+  var _ep=document.getElementById('edit-photo'); if(_ep) _ep.value=ex.photo||'';
+  var _epp=document.getElementById('edit-photo-preview'); var _epi=document.getElementById('edit-photo-img');
+  if(_epp&&_epi){if(ex.photo){_epi.src=ex.photo;_epp.style.display='block';}else{_epp.style.display='none';}}
   document.getElementById('edit-dob').value = ex.dob || '';
   document.getElementById('edit-dod').value = ex.dod || '';
   document.getElementById('edit-mother').value = ex.mother || '';
@@ -2824,6 +2875,7 @@ function saveEdit() {
   const id      = document.getElementById('edit-id').value;
   const newName = document.getElementById('edit-name').value.trim();
   const gender  = document.getElementById('edit-gender').value.trim();
+  const photo   = (document.getElementById('edit-photo')||{value:''}).value.trim();
   const dob     = document.getElementById('edit-dob').value.trim();
   const dod     = document.getElementById('edit-dod').value.trim();
   const mother  = document.getElementById('edit-mother').value.trim();
@@ -2847,6 +2899,7 @@ function saveEdit() {
     address: addr || 'গ্রামঃ কাজিয়াকান্দা, থানাঃ হালুয়াঘাট জেলাঃ ময়মনসিংহ',
     lastUpdated: nowStamp(),
     ...(gender  && { gender }),
+    ...(photo   && { photo }),
     ...(dob     && { dob }),
     ...(dod     && { dod }),
     ...(mother  ? { mother } : {}),
@@ -3437,17 +3490,30 @@ function toggleTheme() {
   }
 }
 
+// ═══════ PHOTO PREVIEW HELPER ═══════
+function prevPhoto(input, prevId, imgId) {
+  var url = input.value.trim();
+  var prev = document.getElementById(prevId);
+  var img  = document.getElementById(imgId);
+  if (!prev || !img) return;
+  if (url) {
+    img.src = url;
+    prev.style.display = 'block';
+    img.onerror = function() { prev.style.display = 'none'; };
+  } else {
+    prev.style.display = 'none';
+  }
+}
+
 // ═══════ FINAL INIT ═══════
 Object.keys(nodes).forEach(id => {
   const nd = nodes[id];
   if (nd.children && nd.children.length) collapsed.add(id);
 });
-collapsed.delete(DATA.id);
-(DATA.children||[]).forEach(c => collapsed.delete(c.id));
+collapseAll();
 render();
-renderEvents();
 renderFooter();
+renderEvents();
 </script>
-
-
-</body></html>
+</body>
+</html>

@@ -1377,7 +1377,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
       </svg>
       <span>সর্বশেষ আপডেট:</span>
-      <span id="sf-last-update" class="" title="সম্পূর্ণ সময়: 2026-02-26 18:58">26 ফেব্রু 2026, 18:58</span>
+      <span id="sf-last-update" class="" title="সম্পূর্ণ সময়: 2026-02-26 19:14">26 ফেব্রু 2026, 19:14</span>
     </div>
     <div class="sf-right">
       <span>মোট সদস্য:</span>
@@ -1651,7 +1651,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
       <div class="cp-section-title">অতিরিক্ত তথ্য</div>
       <div class="cp-field">
         <label class="cp-label">লিঙ্গ</label>
-        <select class="cp-select" id="add-gender">
+        <select class="cp-select" id="add-gender" onchange="updateSpouseLabel('add',this.value)">
           <option value="">নির্বাচন করুন</option>
           <option value="পুরুষ">পুরুষ</option>
           <option value="মহিলা">মহিলা</option>
@@ -1666,18 +1666,18 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
       </div>
       <div class="cp-field">
         <label class="cp-label">জন্ম তারিখ</label>
-        <div class="cp-date-row">
-          <input class="cp-input" id="add-dob" placeholder="যেমন: ১৫ জানুয়ারি ১৯৮০" type="text" data-iso="2009-09-25">
-          <button class="cp-date-picker-btn" onclick="openDatePicker('add-dob','add-dob-native')" title="ক্যালেন্ডার">📅</button>
-          <input type="date" id="add-dob-native" class="cp-date-native" onchange="setDateFromPicker('add-dob','add-dob-native')" style="pointer-events: none;">
+        <div style="display:flex;gap:5px;">
+          <select class="cp-select" id="add-dob-dd" style="flex:1;"><option value="">দিন</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+          <select class="cp-select" id="add-dob-mm" style="flex:2;"><option value="">মাস</option><option value="1">জানুয়ারি</option><option value="2">ফেব্রুয়ারি</option><option value="3">মার্চ</option><option value="4">এপ্রিল</option><option value="5">মে</option><option value="6">জুন</option><option value="7">জুলাই</option><option value="8">আগস্ট</option><option value="9">সেপ্টেম্বর</option><option value="10">অক্টোবর</option><option value="11">নভেম্বর</option><option value="12">ডিসেম্বর</option></select>
+          <select class="cp-select" id="add-dob-yy" style="flex:1.5;"><option value="">বছর</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option></select>
         </div>
       </div>
       <div class="cp-field">
         <label class="cp-label">মৃত্যু তারিখ</label>
-        <div class="cp-date-row">
-          <input class="cp-input" id="add-dod" placeholder="প্রযোজ্য হলে লিখুন" type="text">
-          <button class="cp-date-picker-btn" onclick="openDatePicker('add-dod','add-dod-native')" title="ক্যালেন্ডার">📅</button>
-          <input type="date" id="add-dod-native" class="cp-date-native" onchange="setDateFromPicker('add-dod','add-dod-native')">
+        <div style="display:flex;gap:5px;">
+          <select class="cp-select" id="add-dod-dd" style="flex:1;"><option value="">দিন</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+          <select class="cp-select" id="add-dod-mm" style="flex:2;"><option value="">মাস</option><option value="1">জানুয়ারি</option><option value="2">ফেব্রুয়ারি</option><option value="3">মার্চ</option><option value="4">এপ্রিল</option><option value="5">মে</option><option value="6">জুন</option><option value="7">জুলাই</option><option value="8">আগস্ট</option><option value="9">সেপ্টেম্বর</option><option value="10">অক্টোবর</option><option value="11">নভেম্বর</option><option value="12">ডিসেম্বর</option></select>
+          <select class="cp-select" id="add-dod-yy" style="flex:1.5;"><option value="">বছর</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option></select>
         </div>
       </div>
       <div class="cp-field">
@@ -1705,15 +1705,15 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
       </div>
       <div id="add-marriage-fields" style="display: none;">
         <div class="cp-field">
-          <label class="cp-label">স্ত্রীর নাম</label>
-          <input class="cp-input" id="add-wife" placeholder="যেমন: রহিমা বেগম" type="text">
+          <label class="cp-label" id="add-spouse-label">স্ত্রীর নাম</label>
+          <input class="cp-input" id="add-spouse" placeholder="যেমন: রহিমা বেগম" type="text">
         </div>
         <div class="cp-field">
           <label class="cp-label">বিবাহের তারিখ (বার্ষিকী)</label>
-          <div class="cp-date-row">
-            <input class="cp-input" id="add-wdate" placeholder="যেমন: ১৫ জুন ২০০০" type="text">
-            <button class="cp-date-picker-btn" onclick="openDatePicker('add-wdate','add-wdate-native')" title="ক্যালেন্ডার">📅</button>
-            <input type="date" id="add-wdate-native" class="cp-date-native" onchange="setDateFromPicker('add-wdate','add-wdate-native')" style="pointer-events: none;">
+          <div style="display:flex;gap:5px;">
+            <select class="cp-select" id="add-wdate-dd" style="flex:1;"><option value="">দিন</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+            <select class="cp-select" id="add-wdate-mm" style="flex:2;"><option value="">মাস</option><option value="1">জানুয়ারি</option><option value="2">ফেব্রুয়ারি</option><option value="3">মার্চ</option><option value="4">এপ্রিল</option><option value="5">মে</option><option value="6">জুন</option><option value="7">জুলাই</option><option value="8">আগস্ট</option><option value="9">সেপ্টেম্বর</option><option value="10">অক্টোবর</option><option value="11">নভেম্বর</option><option value="12">ডিসেম্বর</option></select>
+            <select class="cp-select" id="add-wdate-yy" style="flex:1.5;"><option value="">বছর</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option></select>
           </div>
         </div>
       </div>
@@ -1758,7 +1758,7 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         </div>
         <div class="cp-field">
           <label class="cp-label">লিঙ্গ</label>
-          <select class="cp-select" id="edit-gender">
+          <select class="cp-select" id="edit-gender" onchange="updateSpouseLabel('edit',this.value)">
             <option value="">নির্বাচন করুন</option>
             <option value="পুরুষ">পুরুষ</option>
             <option value="মহিলা">মহিলা</option>
@@ -1773,18 +1773,18 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         </div>
         <div class="cp-field">
           <label class="cp-label">জন্ম তারিখ</label>
-          <div class="cp-date-row">
-            <input class="cp-input" id="edit-dob" type="text" placeholder="যেমন: ১৫ জানুয়ারি ১৯৮০" data-iso="2002-02-04">
-            <button class="cp-date-picker-btn" onclick="openDatePicker('edit-dob','edit-dob-native')" title="ক্যালেন্ডার">📅</button>
-            <input type="date" id="edit-dob-native" class="cp-date-native" onchange="setDateFromPicker('edit-dob','edit-dob-native')" style="pointer-events: none;">
+          <div style="display:flex;gap:5px;">
+            <select class="cp-select" id="edit-dob-dd" style="flex:1;"><option value="">দিন</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+            <select class="cp-select" id="edit-dob-mm" style="flex:2;"><option value="">মাস</option><option value="1">জানুয়ারি</option><option value="2">ফেব্রুয়ারি</option><option value="3">মার্চ</option><option value="4">এপ্রিল</option><option value="5">মে</option><option value="6">জুন</option><option value="7">জুলাই</option><option value="8">আগস্ট</option><option value="9">সেপ্টেম্বর</option><option value="10">অক্টোবর</option><option value="11">নভেম্বর</option><option value="12">ডিসেম্বর</option></select>
+            <select class="cp-select" id="edit-dob-yy" style="flex:1.5;"><option value="">বছর</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option></select>
           </div>
         </div>
         <div class="cp-field">
           <label class="cp-label">মৃত্যু তারিখ</label>
-          <div class="cp-date-row">
-            <input class="cp-input" id="edit-dod" type="text" placeholder="প্রযোজ্য হলে লিখুন">
-            <button class="cp-date-picker-btn" onclick="openDatePicker('edit-dod','edit-dod-native')" title="ক্যালেন্ডার">📅</button>
-            <input type="date" id="edit-dod-native" class="cp-date-native" onchange="setDateFromPicker('edit-dod','edit-dod-native')">
+          <div style="display:flex;gap:5px;">
+            <select class="cp-select" id="edit-dod-dd" style="flex:1;"><option value="">দিন</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+            <select class="cp-select" id="edit-dod-mm" style="flex:2;"><option value="">মাস</option><option value="1">জানুয়ারি</option><option value="2">ফেব্রুয়ারি</option><option value="3">মার্চ</option><option value="4">এপ্রিল</option><option value="5">মে</option><option value="6">জুন</option><option value="7">জুলাই</option><option value="8">আগস্ট</option><option value="9">সেপ্টেম্বর</option><option value="10">অক্টোবর</option><option value="11">নভেম্বর</option><option value="12">ডিসেম্বর</option></select>
+            <select class="cp-select" id="edit-dod-yy" style="flex:1.5;"><option value="">বছর</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option></select>
           </div>
         </div>
         <div class="cp-field">
@@ -1812,15 +1812,15 @@ body.light .lm-header, body.light .lm-section-header { background:var(--surface2
         </div>
         <div id="edit-marriage-fields" style="display: block;">
           <div class="cp-field">
-            <label class="cp-label">স্ত্রীর নাম</label>
-            <input class="cp-input" id="edit-wife" placeholder="যেমন: রহিমা বেগম" type="text">
+            <label class="cp-label" id="edit-spouse-label">স্বামীর নাম</label>
+            <input class="cp-input" id="edit-spouse" placeholder="যেমন: রহিমা বেগম" type="text">
           </div>
           <div class="cp-field">
             <label class="cp-label">বিবাহের তারিখ (বার্ষিকী)</label>
-            <div class="cp-date-row">
-              <input class="cp-input" id="edit-wdate" placeholder="যেমন: ১৫ জুন ২০০০" type="text">
-              <button class="cp-date-picker-btn" onclick="openDatePicker('edit-wdate','edit-wdate-native')" title="ক্যালেন্ডার">📅</button>
-              <input type="date" id="edit-wdate-native" class="cp-date-native" onchange="setDateFromPicker('edit-wdate','edit-wdate-native')" style="pointer-events: none;">
+            <div style="display:flex;gap:5px;">
+              <select class="cp-select" id="edit-wdate-dd" style="flex:1;"><option value="">দিন</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+              <select class="cp-select" id="edit-wdate-mm" style="flex:2;"><option value="">মাস</option><option value="1">জানুয়ারি</option><option value="2">ফেব্রুয়ারি</option><option value="3">মার্চ</option><option value="4">এপ্রিল</option><option value="5">মে</option><option value="6">জুন</option><option value="7">জুলাই</option><option value="8">আগস্ট</option><option value="9">সেপ্টেম্বর</option><option value="10">অক্টোবর</option><option value="11">নভেম্বর</option><option value="12">ডিসেম্বর</option></select>
+              <select class="cp-select" id="edit-wdate-yy" style="flex:1.5;"><option value="">বছর</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option></select>
             </div>
           </div>
         </div>
@@ -2513,9 +2513,19 @@ const EXTRA = {
     "dob": "4 এপ্রিল 2014",
     "mother": "লোমাত জেবন",
     "marital": "অবিবাহিত"
+  },
+  "নিশাত_লুবনা": {
+    "job": "অজানা",
+    "address": "গ্রামঃ কাজিয়াকান্দা, থানাঃ হালুয়াঘাট জেলাঃ ময়মনসিংহ",
+    "lastUpdated": "2026-02-26 19:14",
+    "gender": "মহিলা",
+    "photo": "https://i.ibb.co/RkpYCFjC/Whats-App-Image-2025-11-23-at-17-29-16-20464d92.jpg",
+    "dob": "4 ফেব্রুয়ারি 2002",
+    "marital": "বিবাহিত",
+    "husband": "কাজল বেপারি",
+    "wdate": "14 এপ্রিল 2018"
   }
 };
-
 // ═══════ PHOTO & COVER CONSTANTS ═══════
 const DEFAULT_MALE_IMG   = 'https://i.ibb.co/fYX4HB1Z/male.png';
 const DEFAULT_FEMALE_IMG = 'https://i.ibb.co/H68ZWqW/female.png';
@@ -2636,6 +2646,7 @@ function showSheet(id) {
           <div class="pib-value" style="color:${extra.marital==='বিবাহিত'?'#b8e85a':extra.marital==='অবিবাহিত'?'#7ec8f4':'#f4a56a'}">${extra.marital==='বিবাহিত'?'💍 বিবাহিত':extra.marital==='অবিবাহিত'?'🔵 অবিবাহিত':'🕊️ '+extra.marital}</div>
         </div>
         ${extra.wife ? `<div class="profile-info-box"><div class="pib-label">স্ত্রীর নাম</div><div class="pib-value" style="color:#f592c4">💑 ${extra.wife}</div></div>` : ''}
+        ${extra.husband ? `<div class="profile-info-box"><div class="pib-label">স্বামীর নাম</div><div class="pib-value" style="color:#97b4f0">💑 ${extra.husband}</div></div>` : ''}
         ${extra.wdate ? `<div class="profile-info-box"><div class="pib-label">বিবাহের তারিখ</div><div class="pib-value">📅 ${extra.wdate}</div></div>` : ''}
       </div>` : ''}
 
@@ -2707,6 +2718,20 @@ document.getElementById('searchInput').addEventListener('keydown', function(e) {
 
 // ═══════ CONTROL PANEL ═══════
 const GEN_COLORS = ['#e8c96a','#f4a56a','#5ee8d8','#97b4f0','#f592c4','#b8e85a'];
+
+// ── Populate date dropdowns ──
+(function populateDateDropdowns() {
+  const months = ['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+  const prefixes = ['add-dob','add-dod','add-wdate','edit-dob','edit-dod','edit-wdate'];
+  prefixes.forEach(p => {
+    const dd = document.getElementById(p+'-dd');
+    const mm = document.getElementById(p+'-mm');
+    const yy = document.getElementById(p+'-yy');
+    if (dd) { for(let i=1;i<=31;i++){const o=document.createElement('option');o.value=i;o.textContent=i;dd.appendChild(o);} }
+    if (mm) { months.forEach((m,i)=>{const o=document.createElement('option');o.value=i+1;o.textContent=m;mm.appendChild(o);}); }
+    if (yy) { const cur=new Date().getFullYear(); for(let y=cur;y>=1900;y--){const o=document.createElement('option');o.value=y;o.textContent=y;yy.appendChild(o);} }
+  });
+})();
 let selectedParentId = null;
 let selectedEditId   = null;
 let selectedRemoveId = null;
@@ -2724,6 +2749,11 @@ function closeCP() {
   document.getElementById('cp-drawer').classList.remove('open');
 }
 
+function updateSpouseLabel(prefix, gender) {
+  const lbl = document.getElementById(prefix+'-spouse-label');
+  if (!lbl) return;
+  lbl.textContent = (gender === 'মহিলা') ? 'স্বামীর নাম' : 'স্ত্রীর নাম';
+}
 function toggleAddMarriage(val) {
   document.getElementById('add-marriage-fields').style.display = val === 'বিবাহিত' ? 'block' : 'none';
 }
@@ -2808,15 +2838,17 @@ function addMember() {
   const pid     = document.getElementById('add-parent-id').value;
   const gender  = document.getElementById('add-gender').value.trim();
   const photo   = (document.getElementById('add-photo')||{value:''}).value.trim();
-  const dob     = document.getElementById('add-dob').value.trim();
-  const dod     = document.getElementById('add-dod').value.trim();
+  const dob     = getDateFromDropdowns('add-dob');
+  const dod     = getDateFromDropdowns('add-dod');
   const mother  = document.getElementById('add-mother').value.trim();
   const job     = document.getElementById('add-job').value.trim();
   const addr    = document.getElementById('add-address').value.trim();
   const notes   = document.getElementById('add-notes').value.trim();
   const marital = document.getElementById('add-marital').value.trim();
-  const wife    = document.getElementById('add-wife') ? document.getElementById('add-wife').value.trim() : '';
-  const wdate   = document.getElementById('add-wdate') ? document.getElementById('add-wdate').value.trim() : '';
+  const spouse  = document.getElementById('add-spouse') ? document.getElementById('add-spouse').value.trim() : '';
+  const wife    = (gender === 'পুরুষ') ? spouse : '';
+  const husband = (gender === 'মহিলা') ? spouse : '';
+  const wdate   = getDateFromDropdowns('add-wdate');
 
   if (!name) { showToast('❌ নাম লিখুন', 'error'); return; }
   if (!pid)  { showToast('❌ পিতা/অভিভাবক নির্বাচন করুন', 'error'); return; }
@@ -2844,18 +2876,23 @@ function addMember() {
     ...(dod     && { dod }),
     ...(autoMother && { mother: autoMother }),
     ...(marital && { marital }),
-    ...(marital === 'বিবাহিত' && wife  && { wife }),
-    ...(marital === 'বিবাহিত' && wdate && { wdate }),
+    ...(marital === 'বিবাহিত' && wife    && { wife }),
+    ...(marital === 'বিবাহিত' && husband && { husband }),
+    ...(marital === 'বিবাহিত' && wdate   && { wdate }),
   };
 
-  ['add-name','add-dob','add-dod','add-mother','add-job','add-notes','add-wife','add-wdate','add-photo'].forEach(f => {
+  ['add-name','add-mother','add-job','add-notes','add-spouse','add-photo'].forEach(f => {
     const el = document.getElementById(f); if (el) el.value = '';
+  });
+  ['add-dob','add-dod','add-wdate'].forEach(p => {
+    ['dd','mm','yy'].forEach(s => { const el=document.getElementById(p+'-'+s); if(el) el.value=''; });
   });
   var _ap = document.getElementById('add-photo-preview'); if (_ap) _ap.style.display='none';
   document.getElementById('add-gender').value = '';
   document.getElementById('add-marital').value = '';
   document.getElementById('add-address').value = 'গ্রামঃ কাজিয়াকান্দা, থানাঃ হালুয়াঘাট জেলাঃ ময়মনসিংহ';
   document.getElementById('add-marriage-fields').style.display = 'none';
+  document.getElementById('add-spouse-label').textContent = 'স্ত্রীর নাম';
   document.getElementById('add-parent-search').value = '';
   selectedParentId = null;
   filterParentList('');
@@ -2893,14 +2930,18 @@ function loadEditForm(id) {
   var _ep=document.getElementById('edit-photo'); if(_ep) _ep.value=ex.photo||'';
   var _epp=document.getElementById('edit-photo-preview'); var _epi=document.getElementById('edit-photo-img');
   if(_epp&&_epi){if(ex.photo){_epi.src=ex.photo;_epp.style.display='block';}else{_epp.style.display='none';}}
-  document.getElementById('edit-dob').value = ex.dob || '';
-  document.getElementById('edit-dod').value = ex.dod || '';
+  setDropdownsFromDate('edit-dob', ex.dob || '');
+  setDropdownsFromDate('edit-dod', ex.dod || '');
   document.getElementById('edit-mother').value = ex.mother || '';
   document.getElementById('edit-job').value = ex.job || '';
   document.getElementById('edit-address').value = ex.address || 'গ্রামঃ কাজিয়াকান্দা, থানাঃ হালুয়াঘাট জেলাঃ ময়মনসিংহ';
   document.getElementById('edit-marital').value = ex.marital || '';
-  document.getElementById('edit-wife').value = ex.wife || '';
-  document.getElementById('edit-wdate').value = ex.wdate || '';
+  // spouse field
+  const spouseVal = ex.wife || ex.husband || '';
+  document.getElementById('edit-spouse').value = spouseVal;
+  // update spouse label
+  updateSpouseLabel('edit', ex.gender || '');
+  setDropdownsFromDate('edit-wdate', ex.wdate || '');
   document.getElementById('edit-notes').value = n.notes || '';
   toggleEditMarriage(ex.marital || '');
   document.getElementById('edit-form').style.display = 'block';
@@ -2911,15 +2952,17 @@ function saveEdit() {
   const newName = document.getElementById('edit-name').value.trim();
   const gender  = document.getElementById('edit-gender').value.trim();
   const photo   = (document.getElementById('edit-photo')||{value:''}).value.trim();
-  const dob     = document.getElementById('edit-dob').value.trim();
-  const dod     = document.getElementById('edit-dod').value.trim();
+  const dob     = getDateFromDropdowns('edit-dob');
+  const dod     = getDateFromDropdowns('edit-dod');
   const mother  = document.getElementById('edit-mother').value.trim();
   const job     = document.getElementById('edit-job').value.trim();
   const addr    = document.getElementById('edit-address').value.trim();
   const notes   = document.getElementById('edit-notes').value.trim();
   const marital = document.getElementById('edit-marital').value.trim();
-  const wife    = document.getElementById('edit-wife').value.trim();
-  const wdate   = document.getElementById('edit-wdate').value.trim();
+  const spouse  = document.getElementById('edit-spouse').value.trim();
+  const wife    = (gender === 'পুরুষ') ? spouse : '';
+  const husband = (gender === 'মহিলা') ? spouse : '';
+  const wdate   = getDateFromDropdowns('edit-wdate');
   if (!id || !newName) { showToast('❌ নাম খালি রাখা যাবে না', 'error'); return; }
 
   nodes[id].name = newName;
@@ -2939,8 +2982,9 @@ function saveEdit() {
     ...(dod     && { dod }),
     ...(mother  ? { mother } : {}),
     ...(marital && { marital }),
-    ...(marital === 'বিবাহিত' && wife  && { wife }),
-    ...(marital === 'বিবাহিত' && wdate && { wdate }),
+    ...(marital === 'বিবাহিত' && wife    && { wife }),
+    ...(marital === 'বিবাহিত' && husband && { husband }),
+    ...(marital === 'বিবাহিত' && wdate   && { wdate }),
   };
 
   if (marital === 'বিবাহিত' && wife) {
@@ -3083,11 +3127,18 @@ function downloadHTML() {
     /(\/\/ ═══════ DATA ═══════\s*\n)const DATA = \{[\s\S]*?\};\s*\n(\/\/ ═══════ INDEX)/,
     `$1const DATA = ${dataStr};\n$2`
   );
-  // EXTRA: unique sentinel দিয়ে replace
+  // EXTRA: sentinel দিয়ে replace (getGenColor ফাংশনের আগে)
   src = src.replace(
-    /^const EXTRA = \{[\s\S]*?\};\s*\n(function getGenColor)/m,
-    `const EXTRA = ${extraStr};\n\nfunction getGenColor`
+    /\nconst EXTRA = \{[\s\S]*?\};\s*\n(\/\/ ═══════ PHOTO)/,
+    `\nconst EXTRA = ${extraStr};\n$1`
   );
+  // fallback: যদি উপরেরটা কাজ না করে
+  if (!src.includes(extraStr.slice(0, 30))) {
+    src = src.replace(
+      /^const EXTRA = \{[\s\S]*?\};\s*\n/m,
+      `const EXTRA = ${extraStr};\n`
+    );
+  }
 
   // ── ডাউনলোড ──
   const now = new Date();
@@ -3325,27 +3376,47 @@ function renderFooter() {
   }
 }
 
-// ═══════ DATE PICKER HELPERS ═══════
-function openDatePicker(textId, nativeId) {
-  const nat = document.getElementById(nativeId);
-  if (!nat) return;
-  // Try to pre-fill native from text (ISO or "DD Month YYYY")
-  const cur = document.getElementById(textId).value.trim();
-  if (cur && /^\d{4}-\d{2}-\d{2}$/.test(cur)) nat.value = cur;
-  nat.style.pointerEvents = 'auto';
-  nat.showPicker ? nat.showPicker() : nat.click();
-  nat.style.pointerEvents = 'none';
+// ═══════ DATE DROPDOWN HELPERS ═══════
+const BN_MONTHS = ['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+
+function getDateFromDropdowns(prefix) {
+  const dd = document.getElementById(prefix+'-dd').value;
+  const mm = document.getElementById(prefix+'-mm').value;
+  const yy = document.getElementById(prefix+'-yy').value;
+  if (!dd && !mm && !yy) return '';
+  let parts = [];
+  if (dd) parts.push(parseInt(dd));
+  if (mm) parts.push(BN_MONTHS[parseInt(mm)-1]);
+  if (yy) parts.push(yy);
+  return parts.join(' ');
 }
-function setDateFromPicker(textId, nativeId) {
-  const nat = document.getElementById(nativeId);
-  const txt = document.getElementById(textId);
-  if (!nat || !nat.value || !txt) return;
-  // Convert YYYY-MM-DD to Bengali-style readable
-  const [y,m,d] = nat.value.split('-');
-  const months = ['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
-  txt.value = `${parseInt(d)} ${months[parseInt(m)-1]} ${y}`;
-  // Store ISO in a data attribute for event parsing
-  txt.dataset.iso = nat.value;
+
+function setDropdownsFromDate(prefix, dateStr) {
+  const ddEl = document.getElementById(prefix+'-dd');
+  const mmEl = document.getElementById(prefix+'-mm');
+  const yyEl = document.getElementById(prefix+'-yy');
+  if (!ddEl || !mmEl || !yyEl) return;
+  if (!dateStr) { ddEl.value=''; mmEl.value=''; yyEl.value=''; return; }
+  // Try ISO
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr.trim())) {
+    const [y,m,d] = dateStr.trim().split('-');
+    ddEl.value = parseInt(d);
+    mmEl.value = parseInt(m);
+    yyEl.value = y;
+    return;
+  }
+  // Bengali text "15 জানুয়ারি 1980"
+  const monthMap = {'জানুয়ারি':1,'ফেব্রুয়ারি':2,'মার্চ':3,'এপ্রিল':4,'মে':5,'জুন':6,'জুলাই':7,'আগস্ট':8,'সেপ্টেম্বর':9,'অক্টোবর':10,'নভেম্বর':11,'ডিসেম্বর':12};
+  const parts = dateStr.trim().split(/\s+/);
+  let day=null, month=null, year=null;
+  for (const p of parts) {
+    const n = parseInt(p);
+    if (!isNaN(n)) { if (n > 31) year = p; else if (day===null) day = n; }
+    else if (monthMap[p]) month = monthMap[p];
+  }
+  if (day) ddEl.value = day;
+  if (month) mmEl.value = month;
+  if (year) yyEl.value = year;
 }
 
 // ═══════ EVENTS ENGINE ═══════
